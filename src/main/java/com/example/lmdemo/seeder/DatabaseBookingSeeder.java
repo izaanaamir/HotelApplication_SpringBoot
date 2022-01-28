@@ -1,5 +1,7 @@
-package com.example.lmdemo;
+package com.example.lmdemo.seeder;
 
+import com.example.lmdemo.repository.BookingRepository;
+import com.example.lmdemo.model.Bookings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

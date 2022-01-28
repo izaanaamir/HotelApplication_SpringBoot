@@ -1,4 +1,4 @@
-package com.example.lmdemo;
+package com.example.lmdemo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

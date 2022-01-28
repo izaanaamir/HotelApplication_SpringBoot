@@ -1,21 +1,20 @@
-package com.example.lmdemo;
+package com.example.lmdemo.controller;
 
+import com.example.lmdemo.repository.BookingRepository;
+import com.example.lmdemo.model.Bookings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin")
-public class AdminBookingController {
+@RequestMapping("/all")
+public class BookingController {
     private BookingRepository bookingRepository;
-    private UserRepository userRepository;
-
 
     @Autowired
-    public AdminBookingController(BookingRepository bookingRepository, UserRepository userRepository) {
+    public BookingController(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
-        this.userRepository = userRepository;
     }
 
     @RequestMapping(value= "/getAll")
@@ -33,10 +32,5 @@ public class AdminBookingController {
         bookingRepository.deleteById(id);
 
         return bookingRepository.findAll();
-    }
-
-    @RequestMapping("/users")
-    public List<User> getUsers(){
-        return userRepository.findAll();
     }
 }
